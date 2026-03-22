@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcf3cxlrkp311"]
+
+[ext_resource type="AudioStream" uid="uid://ppas85vmdit7" path="res://resources/Stygian Lights.wav" id="1_ekkec"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ekkec")
+autoplay = true

@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://ch78hpnluehfk"]
+
+[ext_resource type="Script" uid="uid://50qjdc3vvxx5" path="res://Scenes/main.gd" id="1_6bp64"]
+[ext_resource type="VideoStream" uid="uid://deor3138cc46u" path="res://resources/WaterVid.ogv" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://bcf3cxlrkp311" path="res://Scenes/bg_music1.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://dj68ypkshw4oh" path="res://Scenes/dot_grid.gd" id="2_jjvhh"]
+[ext_resource type="Script" uid="uid://cdrkljwfkhah3" path="res://Scenes/Flip_card.gd" id="3_kry3j"]
+[ext_resource type="Script" uid="uid://dv5iloiklyqp2" path="res://Scenes/card_back.gd" id="4_21xkr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
+bg_color = Color(0.13884926, 0.2024611, 0.60124767, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bp64"]
+bg_color = Color(0.13725491, 0.20392157, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="FontFile" id="FontFile_21xkr"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_344ge"]
+bg_color = Color(0.13725491, 0.20392157, 0.6, 1)
+
+[node name="main" type="Node2D" unique_id=873044993]
+script = ExtResource("1_6bp64")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1135181504]
+position = Vector2(0, 0.105)
+zoom = Vector2(0.31, 0.31)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1439110821]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=206722726]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="PlayerGrid" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=6668374]
+layout_mode = 2
+script = ExtResource("2_jjvhh")
+
+[node name="AIFlipCard" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=21491249]
+layout_mode = 2
+script = ExtResource("3_kry3j")
+
+[node name="AIGridFront" type="Control" parent="CanvasLayer/HBoxContainer/AIFlipCard" unique_id=1726543326]
+anchors_preset = 0
+offset_left = -40.0
+offset_right = -40.0
+offset_bottom = 500.0
+script = ExtResource("2_jjvhh")
+
+[node name="CardBack" type="Control" parent="CanvasLayer/HBoxContainer/AIFlipCard" unique_id=1969114469]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_21xkr")
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1561648729]
+offset_left = 39.0
+offset_top = 24.0
+offset_right = 87.0
+offset_bottom = 47.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_21xkr")
+text = "10 sec"
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer" unique_id=888869482]
+offset_left = 709.0
+offset_top = 572.0
+offset_right = 822.0
+offset_bottom = 599.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6bp64")
+text = "Percentage = "
+
+[node name="SubmitButton" type="Button" parent="CanvasLayer" unique_id=1709644602]
+offset_left = 301.0
+offset_top = 568.0
+offset_right = 378.0
+offset_bottom = 604.0
+theme_override_fonts/font = SubResource("FontFile_21xkr")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_344ge")
+text = "Submit "
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1102902442]
+modulate = Color(0.8822892, 0.91057557, 0.9975503, 1)
+self_modulate = Color(0.9777195, 0.8573715, 0.8278025, 1)
+offset_left = -1939.0
+offset_top = -1076.0
+offset_right = 1901.0
+offset_bottom = 1084.0
+stream = ExtResource("1_jjgbg")
+speed_scale = 0.5
+autoplay = true
+loop = true
+
+[node name="AudioStreamPlayer2D" parent="." unique_id=1726843319 instance=ExtResource("2_bo1nx")]
