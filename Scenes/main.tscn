@@ -122,8 +122,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6bp64")
 text = "Percentage = "
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1417444561]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 524.0
+offset_top = 573.0
+offset_right = 564.0
+offset_bottom = 596.0
 
 [node name="SubmitButton" type="Button" parent="CanvasLayer" unique_id=1709644602]
 offset_left = 301.0
@@ -135,17 +137,24 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_344ge")
 text = "Submit "
 
-[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=1773147347]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=233217966]
+offset_left = 505.0
+offset_top = 23.0
+offset_right = 582.0
+offset_bottom = 59.0
+theme_override_fonts/font = SubResource("FontFile_21xkr")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_344ge")
+text = "Restart
+"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1102902442]
 modulate = Color(0.8822892, 0.91057557, 0.9975503, 1)
 self_modulate = Color(0.9777195, 0.8573715, 0.8278025, 1)
-offset_left = -1939.0
-offset_top = -1076.0
-offset_right = 1901.0
-offset_bottom = 1084.0
+offset_left = -1914.0
+offset_top = -1038.0
+offset_right = 1926.0
+offset_bottom = 1122.0
 stream = ExtResource("1_jjgbg")
 speed_scale = 0.5
 autoplay = true
@@ -154,4 +163,6 @@ loop = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1280966148]
 stream = ExtResource("6_21xkr")
 volume_db = -20.0
+pitch_scale = 1.05
 autoplay = true
+mix_target = 1
