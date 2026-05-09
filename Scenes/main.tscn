@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://50qjdc3vvxx5" path="res://Scenes/main.gd" id="1_6bp64"]
 [ext_resource type="VideoStream" uid="uid://deor3138cc46u" path="res://resources/WaterVid.ogv" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://bcf3cxlrkp311" path="res://Scenes/bg_music1.tscn" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://dj68ypkshw4oh" path="res://Scenes/dot_grid.gd" id="2_jjvhh"]
 [ext_resource type="Script" uid="uid://cdrkljwfkhah3" path="res://Scenes/Flip_card.gd" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://dv5iloiklyqp2" path="res://Scenes/card_back.gd" id="4_21xkr"]
+[ext_resource type="AudioStream" uid="uid://b8hyxbk54uul8" path="res://resources/Vansire1.wav" id="6_21xkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xkr"]
 bg_color = Color(0.13884926, 0.2024611, 0.60124767, 1)
@@ -121,6 +121,10 @@ offset_bottom = 599.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_6bp64")
 text = "Percentage = "
 
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1417444561]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="SubmitButton" type="Button" parent="CanvasLayer" unique_id=1709644602]
 offset_left = 301.0
 offset_top = 568.0
@@ -130,6 +134,10 @@ theme_override_fonts/font = SubResource("FontFile_21xkr")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_344ge")
 text = "Submit "
+
+[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=1773147347]
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1102902442]
 modulate = Color(0.8822892, 0.91057557, 0.9975503, 1)
@@ -143,4 +151,7 @@ speed_scale = 0.5
 autoplay = true
 loop = true
 
-[node name="AudioStreamPlayer2D" parent="." unique_id=1726843319 instance=ExtResource("2_bo1nx")]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1280966148]
+stream = ExtResource("6_21xkr")
+volume_db = -20.0
+autoplay = true
